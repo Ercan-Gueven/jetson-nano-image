@@ -7,7 +7,7 @@
 set -e
 
 ARCH=arm64
-RELEASE=focal
+RELEASE=yammy
 
 # Check if the user is not root
 if [ "x$(whoami)" != "xroot" ]; then
@@ -24,7 +24,8 @@ fi
 # Install prerequisites packages
 printf "\e[32mInstall the dependencies...     "
 apt-get update > /dev/null
-apt-get install --no-install-recommends -y qemu-user-static debootstrap binfmt-support coreutils parted wget gdisk e2fsprogs libxml2-utils  > /dev/null
+apt-get install --no-install-recommends -y qemu-user-static debootstrap binfmt-support coreutils parted wget gdisk e2fsprogs libxml2-utils bzip2  > /dev/null
+
 printf "[OK]\n"
 
 # Create rootfs directory
